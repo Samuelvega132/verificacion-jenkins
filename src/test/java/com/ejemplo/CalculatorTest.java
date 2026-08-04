@@ -9,7 +9,7 @@ public class CalculatorTest {
     @Test
     void testSumar() {
         Calculator calc = new Calculator();
-        assertEquals(5, calc.sumar(2, 3), "La suma debe ser igual a 5");
+        assertEquals(10, calc.sumar(2, 3)); // Fallará intencionalmente "La suma debe ser igual a 5");
     }
 
     @Test
