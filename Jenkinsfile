@@ -24,7 +24,7 @@ pipeline {
             steps {
                 // Parte 2: Análisis con SonarQube
                 withSonarQubeEnv('SonarQubeServer') { // Nombre exacto que le diste en System de Jenkins
-                    sh 'mvn sonar:sonar'
+                    sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:sonar'
                 }
             }
         }
