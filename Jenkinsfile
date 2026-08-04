@@ -30,14 +30,13 @@ pipeline {
         }
 
         stage('Quality Gate') {
-            steps {
-                // Parte 2: Validación del Quality Gate
-                timeout(time: 2, unit: 'MINUTES') {
-                    script {
-                        def qg = waitForQualityGate()
-                        if (qg.status != 'OK') {
-                            error "El código no superó el Quality Gate de SonarQube: ${qg.status}"
-                        }
+                    steps {
+                        timeout(time: 5, unit: 'MINUTES') {
+                            script {
+                                def qg = waitForQualityGate()
+                                if (qg.status != 'OK') {
+                                    error "El código no superó el Quality Gate de SonarQube: ${qg.status}"
+                                }
                     }
                 }
             }
